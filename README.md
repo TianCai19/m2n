@@ -1,12 +1,11 @@
 # Markdown to Notion Importer
 
-This project provides scripts to convert Markdown content from your clipboard and import it as new pages into Notion. It supports both Node.js and Python.
+This project provides a Node.js script to convert Markdown content from your clipboard and import it as new pages into Notion.
 
 ## Features
 
-- Convert Markdown from clipboard to Notion blocks.
+- Convert Markdown from clipboard to Notion blocks using the `martian` library.
 - Create new Notion pages with the converted content.
-- Supports Node.js and Python.
 - Easy configuration using a `.env` file.
 - Integration with Raycast for quick access.
 
@@ -15,7 +14,6 @@ This project provides scripts to convert Markdown content from your clipboard an
 Before you begin, ensure you have the following:
 
 - **Node.js** (LTS version recommended) and **npm** (Node Package Manager) installed.
-- **Python 3** and **pip** (Python Package Installer) installed.
 - A **Notion Integration Token** (API Key).
 - The **ID of the Notion page** where you want to add new content (this will be the parent page).
 
@@ -46,8 +44,6 @@ Before you begin, ensure you have the following:
 
 ## Usage
 
-### Node.js Version
-
 1.  **Install Dependencies**:
 
     ```bash
@@ -64,24 +60,6 @@ Before you begin, ensure you have the following:
 
     This will create a new Notion page under the specified parent page with the content from your clipboard.
 
-### Python Version
-
-1.  **Install Dependencies**:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-2.  **Copy Markdown to Clipboard**: Copy the Markdown content you wish to import to your system clipboard.
-
-3.  **Run the Script**:
-
-    ```bash
-    python main.py
-    ```
-
-    This will create a new Notion page under the specified parent page with the content from your clipboard.
-
 ## Raycast Integration (macOS)
 
 You can integrate this script with Raycast for quick access.
@@ -90,7 +68,7 @@ You can integrate this script with Raycast for quick access.
 2.  **Create a New Script Command**: Click the `+` button and select `Create New Script Command`.
 3.  **Configure the Script Command**:
     *   **Name**: e.g., `Import Markdown to Notion`
-    *   **Command**: `node /path/to/your/markdown-to-notion/index.js` (or `python /path/to/your/markdown-to-notion/main.py`)
+    *   **Command**: `node /path/to/your/markdown-to-notion/index.js`
         *Replace `/path/to/your/markdown-to-notion/` with the actual path to your project directory.*
     *   **Hotkey**: Assign a convenient hotkey for quick access.
     *   **Argument**: Set to `None`.
