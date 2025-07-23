@@ -1,3 +1,5 @@
+[简体中文](README_zh.md)
+
 # Markdown to Notion Importer
 
 This project provides a Node.js script to convert Markdown content from your clipboard and import it as new pages into Notion.

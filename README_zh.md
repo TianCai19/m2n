@@ -1,3 +1,5 @@
+[English](README.md)
+
 # Markdown 到 Notion 导入器
 
 本项目提供了一个 Node.js 脚本，用于将剪贴板中的 Markdown 内容转换为 Notion 页面并导入。
