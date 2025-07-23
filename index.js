@@ -10,6 +10,18 @@ const pageId = process.env.NOTION_PAGE_ID;
 
 const markdown = clipboardy.readSync();
 
+  let pageTitle = '新 Markdown 页面';
+  const lines = markdown.split('\n');
+  for (const line of lines) {
+    if (line.startsWith('# ')) {
+      pageTitle = line.substring(2).trim();
+      break;
+    } else if (line.startsWith('## ')) {
+      pageTitle = line.substring(3).trim();
+      break;
+    }
+  }
+
 (async () => {
   const blocks = markdownToBlocks(markdown);
 
@@ -21,7 +33,7 @@ const markdown = clipboardy.readSync();
       title: [
         {
           text: {
-            content: 'My Markdown Page',
+            content: pageTitle,
           },
         },
       ],

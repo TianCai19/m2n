@@ -1,88 +1,88 @@
-[简体中文](README_zh.md)
+[English](README_en.md)
 
-# Markdown to Notion Importer
+# Markdown 到 Notion 导入器
 
-This project provides a Node.js script to convert Markdown content from your clipboard and import it as new pages into Notion.
+本项目提供了一个 Node.js 脚本，用于将剪贴板中的 Markdown 内容转换为 Notion 页面并导入。
 
-## Features
+## 功能
 
-- Convert Markdown from clipboard to Notion blocks using the `martian` library.
-- Create new Notion pages with the converted content.
-- Easy configuration using a `.env` file.
-- Integration with Raycast for quick access.
+- 使用 `martian` 库将剪贴板中的 Markdown 转换为 Notion 块。
+- 创建包含转换后内容的新 Notion 页面。
+- 使用 `.env` 文件进行简便配置。
+- 集成 Raycast 以实现快速访问。
 
-## Prerequisites
+## 前提条件
 
-Before you begin, ensure you have the following:
+在开始之前，请确保您具备以下条件：
 
-- **Node.js** (LTS version recommended) and **npm** (Node Package Manager) installed.
-- A **Notion Integration Token** (API Key).
-- The **ID of the Notion page** where you want to add new content (this will be the parent page).
+- 已安装 **Node.js**（推荐 LTS 版本）和 **npm**（Node 包管理器）。
+- 一个 **Notion 集成令牌**（API 密钥）。
+- 您希望添加新内容的 Notion 页面的 **ID**（这将是父页面）。
 
-### Getting Notion API Credentials
+### 获取 Notion API 凭据
 
-1.  **Create a Notion Integration**: Go to [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) and create a new integration.
-2.  **Get the API Key**: Once you create the integration, you'll get an "Internal Integration Token". This is your Notion API key.
-3.  **Get the Page ID**: The page ID is the last part of the URL of the Notion page you want to add the content to. For example, if your page URL is `https://www.notion.so/My-Page-1234567890abcdef1234567890abcdef`, the page ID is `1234567890abcdef1234567890abcdef`.
-4.  **Share the page with your integration**: You need to share the page with the integration you created. Click the "Share" button on the page, and invite your integration.
+1.  **创建 Notion 集成**：访问 [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations) 并创建一个新的集成。
+2.  **获取 API 密钥**：创建集成后，您将获得一个“内部集成令牌”。这就是您的 Notion API 密钥。
+3.  **获取页面 ID**：页面 ID 是您希望添加内容的 Notion 页面 URL 的最后一部分。例如，如果您的页面 URL 是 `https://www.notion.so/My-Page-1234567890abcdef1234567890abcdef`，则页面 ID 是 `1234567890abcdef1234567890abcdef`。
+4.  **与您的集成共享页面**：您需要将页面与您创建的集成共享。点击页面上的“共享”按钮，然后邀请您的集成。
 
-## Setup
+## 设置
 
-1.  **Clone the Repository** (or create the project structure manually):
+1.  **克隆仓库**（或手动创建项目结构）：
 
     ```bash
     git clone <repository-url>
     cd markdown-to-notion
     ```
 
-2.  **Create a `.env` file**: In the root of the project directory, create a file named `.env` and add your Notion API key and Page ID:
+2.  **创建 `.env` 文件**：在项目根目录下，创建一个名为 `.env` 的文件，并添加您的 Notion API 密钥和页面 ID：
 
     ```
     NOTION_API_KEY="your_notion_api_key_here"
     NOTION_PAGE_ID="your_notion_page_id_here"
     ```
 
-    Replace `your_notion_api_key_here` and `your_notion_page_id_here` with your actual credentials.
+    将 `your_notion_api_key_here` 和 `your_notion_page_id_here` 替换为您的实际凭据。
 
-## Usage
+## 使用方法
 
-1.  **Install Dependencies**:
+1.  **安装依赖**：
 
     ```bash
     npm install
     ```
 
-2.  **Copy Markdown to Clipboard**: Copy the Markdown content you wish to import to your system clipboard.
+2.  **复制 Markdown 到剪贴板**：将您希望导入的 Markdown 内容复制到系统剪贴板。
 
-3.  **Run the Script**:
+3.  **运行脚本**：
 
     ```bash
     node index.js
     ```
 
-    This will create a new Notion page under the specified parent page with the content from your clipboard.
+    这将在指定的父页面下创建一个新的 Notion 页面，其中包含您剪贴板中的内容。
 
-## Raycast Integration (macOS)
+## Raycast 集成 (macOS)
 
-You can integrate this script with Raycast for quick access.
+您可以将此脚本与 Raycast 集成，以便快速访问。
 
-1.  **Open Raycast Preferences**: Go to `Raycast > Preferences > Extensions`.
-2.  **Create a New Script Command**: Click the `+` button and select `Create New Script Command`.
-3.  **Configure the Script Command**:
-    *   **Name**: e.g., `Import Markdown to Notion`
-    *   **Command**: `/path/to/your/markdown-to-notion/markdown2notion.sh`
-        *Replace `/path/to/your/markdown-to-notion/` with the actual path to your project directory.*
-        *Remember to make the script executable: `chmod +x /path/to/your/markdown-to-notion/markdown2notion.sh`*
-    *   **Hotkey**: Assign a convenient hotkey for quick access.
-    *   **Argument**: Set to `None`.
-    *   **Output**: Set to `No Output` or `Show in Toast`.
+1.  **打开 Raycast 偏好设置**：前往 `Raycast > Preferences > Extensions`。
+2.  **创建新的脚本命令**：点击 `+` 按钮并选择 `Create New Script Command`。
+3.  **配置脚本命令**：
+    *   **名称**：例如，`Import Markdown to Notion`
+    *   **命令**：`/path/to/your/markdown-to-notion/markdown2notion.sh`
+        *将 `/path/to/your/markdown-to-notion/` 替换为您的项目目录的实际路径。*
+        *请记住使脚本可执行：`chmod +x /path/to/your/markdown-to-notion/markdown2notion.sh`*
+    *   **快捷键**：分配一个方便的快捷键以便快速访问。
+    *   **参数**：设置为 `None`。
+    *   **输出**：设置为 `No Output` 或 `Show in Toast`。
 
-Now, you can trigger the script with your assigned hotkey or by searching for its name in Raycast.
+现在，您可以通过分配的快捷键或在 Raycast 中搜索其名称来触发脚本。
 
-## Contributing
+## 贡献
 
-Feel free to contribute to this project by opening issues or pull requests.
+欢迎通过提出问题或提交拉取请求来为本项目做出贡献。
 
-## License
+## 许可证
 
-This project is licensed under the MIT License.
+本项目采用 MIT 许可证。
