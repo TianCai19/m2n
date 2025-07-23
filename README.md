@@ -68,8 +68,9 @@ You can integrate this script with Raycast for quick access.
 2.  **Create a New Script Command**: Click the `+` button and select `Create New Script Command`.
 3.  **Configure the Script Command**:
     *   **Name**: e.g., `Import Markdown to Notion`
-    *   **Command**: `node /path/to/your/markdown-to-notion/index.js`
+    *   **Command**: `/path/to/your/markdown-to-notion/markdown2notion.sh`
         *Replace `/path/to/your/markdown-to-notion/` with the actual path to your project directory.*
+        *Remember to make the script executable: `chmod +x /path/to/your/markdown-to-notion/markdown2notion.sh`*
     *   **Hotkey**: Assign a convenient hotkey for quick access.
     *   **Argument**: Set to `None`.
     *   **Output**: Set to `No Output` or `Show in Toast`.
